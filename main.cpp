@@ -25,7 +25,7 @@ int player, otvet=0, totvet, prodolzit;
 						{
 							printf ("\nPravilniy otvet: %d",totvet);
 						    printf ("\nVvedite luboe chislo dlya prodolzeniya: ");
-						    scanf ("%d",&prodolzit);
+						    getch();
 						}
 	system("CLS");	
 	printf("2. Vopros");
@@ -44,7 +44,7 @@ int player, otvet=0, totvet, prodolzit;
 						{
 							printf ("\nPravilniy otvet: %d",totvet);
 							printf ("\nVvedite luboe chislo dlya prodolzeniya: ");
-						    scanf ("%d",&prodolzit);
+						    getch();
 						}
 	system("CLS");
 	
