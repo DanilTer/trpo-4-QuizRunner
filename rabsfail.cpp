@@ -10,7 +10,7 @@ using namespace std;
 
 main()
 {	
-int vopros, player, stroka, otvet, totvet, prodolzit;   
+int vopros, player, stroka, otvet, totvet, prodolzit,ch=0;   
 	setlocale(LC_ALL, "rus"); // корректное отображение Кириллицы
     char slovo[1000]; // буфер промежуточного хранения считываемого из файла текста
     ifstream fin("quizrunner.txt"); // открыли файл для чтения
@@ -31,12 +31,13 @@ int vopros, player, stroka, otvet, totvet, prodolzit;
 				else
 				{
 					printf ("\nПравильные ответ: %d",totvet);
-						    printf ("\nНажмите на любую кнопку: ");
-						    scanf("%d",&prodolzit);
-						    if (prodolzit == 0)
-						    {
-						    	;
-							}
+					printf ("\nНажмите на любую кнопку: ");
+				    while (ch != 13)
+				    {
+				    	ch = getch();
+				    	cout << " " << (char)ch << endl;
+				    	break;
+				    }
 				}
 			}
     	cout << slovo << endl; // напечатали эту строку
