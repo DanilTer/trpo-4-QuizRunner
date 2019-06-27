@@ -65,8 +65,7 @@ setlocale(LC_ALL, "rus"); // корректное отображение Кириллицы
  	}
  }			
 printf("Ваш результат:\n");
-printf("Кол-во правильных ответов: %d/2",otvet);
-system("PAUSE");
+printf("Кол-во правильных ответов: %d/2\n",otvet);
 }
 
 
@@ -81,8 +80,8 @@ int main()
         switch (variant) {
 
             case 1:
+                system("cls");
             	test ();
-                cout << "Ну впринципе всё" << endl;
                 break;
         }
         if (variant !=2)
