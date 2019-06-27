@@ -6,12 +6,32 @@
 #include <fstream>
 
 using namespace std;
+void print_menu() {
+    system("cls");
+    cout << "Что вы хотите?" << endl;
+    cout << "1. Начать тест" << endl;
+    cout << "2. Выход" << endl;
+    cout << ">";
+}
 
-main()
+int get_variant(int count) {
+    int variant;
+    char s[100];
+    scanf("%s", s);
+
+    while (sscanf(s, "%d", &variant) != 1 || variant < 1 || variant > count) {
+        printf("Некорректный ввод, повторите номер операции: ");
+        scanf("%s", s);
+    }
+
+    return variant;
+}
+
+void test ()
 {
-int player, otvet=0, totvet[2]={2,4}, prodolzit, ch, i=0, vopros, stroka;	
 setlocale(LC_ALL, "rus"); // корректное отображение Кириллицы
     char slovo[1000]; // буфер промежуточного хранения считываемого из файла текста
+    int player, otvet=0, totvet[2]={2,4}, prodolzit, ch, i=0, vopros, stroka;	
     ifstream fin("quizrunner.txt"); // открыли файл для чтения
  for(vopros = 0; vopros<2; vopros++,i++)
  {
@@ -47,7 +67,27 @@ setlocale(LC_ALL, "rus"); // корректное отображение Кириллицы
 printf("Ваш результат:\n");
 printf("Кол-во правильных ответов: %d/2",otvet);
 system("PAUSE");
-return 0;
 }
-  
 
+
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+    int variant;
+    do {
+        print_menu();
+        variant = get_variant(2);
+        switch (variant) {
+
+            case 1:
+            	test ();
+                cout << "Ну впринципе всё" << endl;
+                break;
+        }
+        if (variant !=2)
+            system("pause");
+    } while (variant != 2);
+
+    return 0;
+}
